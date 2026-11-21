@@ -25,6 +25,9 @@ cpSync(join(here, 'game'), join(out, 'game'), { recursive: true });
 mkdirSync(join(out, 'screenshots'), { recursive: true });
 if (existsSync(join(here, 'screenshots'))) cpSync(join(here, 'screenshots'), join(out, 'screenshots'), { recursive: true });
 
+// Entry-specific hand-in: Spot the Seasons writes game/ (its vanilla-JS engine, scenes and
+// sprites), the three screenshots the judge reads, and dossier.json from the kit's library.
+// The flags below mirror the scorer's own caps so a bad hand-in fails here, not at judging.
 // The scorer's own caps (reference/gate.json): only text_max_bytes shapes the bytes; the others refuse an entry the
 // scorer would refuse (more than 4 screenshots or one over 256 KiB; more than 993 files in game/ or 48 MiB of game
 // files, in all, or a path under game/ over 1000 bytes: game/ counts beside /output's own 1000-entry cap, its
